@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Servicios de Riego</title>
+    <meta http-equiv="refresh" content="3">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="mt-5 mb-4">Tabla de Servicios de Riego</h2>
+                <a href="http://127.0.0.1:8000/" class="btn btn-outline-success" style="width: 65%;">inicio</a>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-group mt-5">
+                    <li class="list-group-item active" aria-current="true">Integrantes</li>
+                    <li class="list-group-item">
+                        Estupiñan Solis Miguel Angel
+                        <br>
+                        Diaz Chimarro Edwin Fernando
+                        <br>
+                        Chamorro Ruiz Macarena Elizabeth 
+                    </li> 
+                </ul>
+            </div>
+        </div>
+        <hr>
+
+        <table class="table table-hover">
+            <thead>
+                <tr style="background: black;color: white;">
+                    <th>ID</th>
+                    <th>Goteo</th>
+                    <th>Riego Invernadero</th>
+                    <th>Riego Jardines</th>
+                    <th>Aspersión</th>
+                    <th>Conducciones</th>
+                    <th>Riego Árboles</th>
+                    <th>Riego Tecnificados</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for servicio in servicios %}
+                <tr>
+                    <td>{{ servicio.id }}</td>
+                    <td>{{ servicio.id_goteo }}<br>{{ servicio.id_goteo.costo_estimado }}</td>
+                    <td>{{ servicio.id_riego_invernadero }}<br>{{ servicio.id_riego_invernadero.costo_estimado }}</td>
+                    <td>{{ servicio.id_riego_jardines }}<br>{{ servicio.id_riego_jardines.costo_estimado }}</td>
+                    <td>{{ servicio.id_aspersion }}<br>{{ servicio.id_aspersion.costo_estimado }}</td>
+                    <td>{{ servicio.id_conducciones }}<br>{{ servicio.id_conducciones.costo_estimado }}</td>
+                    <td>{{ servicio.id_riego_Arboles }}<br>{{ servicio.id_riego_Arboles.costo_estimado }}</td>
+                    <td>{{ servicio.id_riego_tecnificados }}<br>{{ servicio.id_riego_tecnificados.costo_estimado }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
